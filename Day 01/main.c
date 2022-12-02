@@ -24,7 +24,6 @@ int main(){
    
     fp = fopen(FILENAME, "r");
     if(fp){
-       
         elfs = getElfsInOrder(fp);
         maxCalories = getTopCalories(INDEX_PART_1, elfs);
         printf("Top Calories index %d: %d\n", INDEX_PART_1, maxCalories);
@@ -86,9 +85,9 @@ int getTopCalories(int index, elfList_t *elf){
     return calories;
 }
 
-void printElfs(elfList_t *h){
-    for(h; h->next;h=h->next){
-        printf("%d -> ", h->calories);
-    }
-    printf("\n");
-}
+// void printElfs(elfList_t *h){
+//     for(h; h->next;h=h->next){
+//         printf("%d -> ", h->calories);
+//     }
+//     printf("\n");
+// }
