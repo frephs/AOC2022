@@ -9,8 +9,8 @@ typedef struct elfList{
 
 #define FILENAME "input.txt"
 #define MAXLEN 15
-#define INDEX1 1
-#define INDEX2 3
+#define INDEX_PART_1 1
+#define INDEX_PART_2 3
 
 elfList_t * getElfsInOrder(FILE *fp);
 elfList_t * insertElf(elfList_t *head, int elfCalories, int elfIndex);
@@ -26,10 +26,10 @@ int main(){
     if(fp){
        
         elfs = getElfsInOrder(fp);
-        maxCalories = getTopCalories(INDEX1, elfs);
-        printf("Top Calories index %d: %d\n", INDEX1, maxCalories);
-        maxCalories = getTopCalories(INDEX2, elfs);
-        printf("Top Calories index %d: %d\n", INDEX2, maxCalories);
+        maxCalories = getTopCalories(INDEX_PART_1, elfs);
+        printf("Top Calories index %d: %d\n", INDEX_PART_1, maxCalories);
+        maxCalories = getTopCalories(INDEX_PART_2, elfs);
+        printf("Top Calories index %d: %d\n", INDEX_PART_2, maxCalories);
         fclose(fp);
     } else {
         printf("Could not open the file!\n");
