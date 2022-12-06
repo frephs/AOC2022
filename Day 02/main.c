@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define FILENAME "input.txt"
+
 int score(char a, char b){
     int s;
     if (a == b){
@@ -10,5 +12,15 @@ int score(char a, char b){
     }else{
         s = 0;
     }
+    return s;
 }
 
+int main (){
+    FILE *fp;
+    fp = fopen(FILENAME, "r");
+    if(fp){
+        
+    }else{
+        printf("Could not open the file")
+    }
+}
