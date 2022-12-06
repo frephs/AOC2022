@@ -101,5 +101,5 @@ void * destroyList(elfList_t *h){
     if(h->next){
         destroyList(h->next);
     }
-    free(h) 
+    free(h);
 }
