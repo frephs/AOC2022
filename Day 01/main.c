@@ -17,6 +17,10 @@ elfList_t * insertElf(elfList_t *head, int elfCalories, int elfIndex);
 int getTopCalories(int index, elfList_t *elf);
 void printElfs(elfList_t *h);
 
+/*This problem is not indeded to be solved with linked list but rather a 3 cell array maximum in the second part, i know.
+I decided to solve it with linked lists for revising purpuses */
+
+
 int main(){
     FILE *fp;
     elfList_t *elfs;
