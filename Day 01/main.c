@@ -16,7 +16,7 @@ elfList_t * getElfsInOrder(FILE *fp);
 elfList_t * insertElf(elfList_t *head, int elfCalories, int elfIndex);
 int getTopCalories(int index, elfList_t *elf);
 void printElfs(elfList_t *h);
-
+void * destroyList(elfList_t *h);
 /*This problem is not indeded to be solved with linked list but rather a 3 cell array maximum in the second part, i know.
 I decided to solve it with linked lists for revising purpuses */
 
@@ -34,6 +34,7 @@ int main(){
         maxCalories = getTopCalories(INDEX_PART_2, elfs);
         printf("Top Calories index %d: %d\n", INDEX_PART_2, maxCalories);
         fclose(fp);
+        destroyList(elfs);
     } else {
         printf("Could not open the file!\n");
     }
@@ -95,3 +96,10 @@ int getTopCalories(int index, elfList_t *elf){
 //     }
 //     printf("\n");
 // }
+
+void * destroyList(elfList_t *h){
+    if(h->next){
+        destroyList(h->next);
+    }
+    free(h) 
+}
